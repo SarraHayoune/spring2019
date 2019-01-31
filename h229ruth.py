@@ -7,7 +7,7 @@ import matplotlib.pylab as plt
 import readcol
 
 ('/jillian/storm/storm.cosmo25cmb.4096g5HbwK1BH.004096/storm.cosmo25cmb.4096g5HbwK1BH.004096')
-files = readcol.readcol('/jillian/h229/files.list')
+files = readcol.readcol('/Jillian/h229/files.list')
 files = files[:,0]
 
 # function to find black hole

@@ -15,8 +15,9 @@ for file in files:
     
     # loading the snapshotS
     s =pynbody.load('/Jillian/h229/'+file)
-    print s
-    data = [getz(s)] 
+    s.physical_units()
+    
+    data = [getz(s), s] 
         
         
     data= str(data)

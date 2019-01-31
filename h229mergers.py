@@ -16,7 +16,7 @@ for file in files:
     # loading the snapshotS
     s =pynbody.load('/Jillian/h229/'+file)
     print s
- data = [getz(s)] 
+data = [getz(s)] 
         
         
         data= str(data)

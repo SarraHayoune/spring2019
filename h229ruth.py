@@ -6,13 +6,13 @@ import pandas as pd
 import matplotlib.pylab as plt
 import readcol
 
-('/jillian/storm/storm.cosmo25cmb.4096g5HbwK1BH.004096/storm.cosmo25cmb.4096g5HbwK1BH.004096')
 files = readcol.readcol('/Jillian/h229/files.list')
 files = files[:,0]
 
 # function to find black hole
 def findBH(s):
-    BHfilter = pynbody.filt.LowPass('tform',0.0)
+    #BHfilter = pynbody.filt.LowPass('tform',0.0)
+    BHfilter = np.where(snap.stars['iord']==60352986 or snap.stars['iord']==60354630)
     BH = s.stars[BHfilter]
     return BH
 
@@ -32,10 +32,10 @@ def gettime(s):
     return pynbody.analysis.cosmology.age(s)
 
 f =  open("h229.dat", "w+") 
-for file in files:
+for j in range(13):
     
     # loading the snapshotS
-    s =pynbody.load('/Jillian/h229/'+file)
+    s =pynbody.load('/Jillian/h229/'+files[j])
  
     # convert the units 
     s.physical_units()
@@ -89,5 +89,5 @@ for file in files:
         f.write(data+'\n')
     
     print data
-         
+    
 f.close()

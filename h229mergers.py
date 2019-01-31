@@ -19,10 +19,10 @@ for file in files:
     data = [getz(s)] 
         
         
-        data= str(data)
-        data= data[1:-1]
-        f.write(data+'\n')
+    data= str(data)
+    data= data[1:-1]
+    f.write(data+'\n')
     
-    print data
+print data
          
 f.close()

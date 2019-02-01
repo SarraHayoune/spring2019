@@ -1,6 +1,7 @@
 # Assignement: Ruth simulation (h229)[focusing on galaxy merger at z=3.76]
 import pynbody 
 import numpy as np
+import pandas as pd
 import matplotlib.pylab as plt
 import readcol
 import BH_functions as BHF
@@ -12,8 +13,12 @@ files = files[:,0]
 # function to find black hole
 def findBH(s):
     #BHfilter = pynbody.filt.LowPass('tform',0.0)
+<<<<<<< HEAD
     BHfilter = np.where(s.stars['iord']==60352986)
     # or s.stars['iord']==60354630)
+=======
+    BHfilter = np.where(snap.stars['iord']==60352986) or (snap.stars['iord']==60354630)
+>>>>>>> 10c0ed7f3a038ad12e4d4107b60b7ffc0b12595c
     BH = s.stars[BHfilter]
     return BH
 
@@ -76,11 +81,10 @@ for j in range(13):
         #the .5 is the square root , this is the distance formula
         distance =((BHx**2)+(BHy**2)+(BHz**2))**(.5)
         print "the distance is:", distance
-        
         # create an image using  the default bands (i, v, u)
-        BHF.render(s,width= '5 kpc',plot=True,ret_im=True,filename='halo'+str(currenthalo)+'.png')
+        BHF.render(s,width= '10 kpc',plot=True,ret_im=True,filename='halo'+str(currenthalo)+'.png')
         plt.plot(BHx, BHy,'+')
-        #plt.savefig('h229.png')              
+        #plt.savefig('h229.png')
    
         
         starmass = h[currenthalo].s['mass'].sum()

@@ -15,7 +15,7 @@ files = files[:,0]
 for j in range(13):
     
     # loading the snapshotS
-    s =pynbody.load('/Jillian/h229/'+file)
+    s =pynbody.load('/Jillian/h229/'+file[j])
     s.physical_units()
     # convert the units
     s.physical_units()

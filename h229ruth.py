@@ -1,6 +1,7 @@
 # Assignement: Ruth simulation (h229)[focusing on galaxy merger at z=3.76]
 import pynbody 
 import numpy as np
+import pandas as pd
 import matplotlib.pylab as plt
 import readcol
 import BH_functions as BHF
@@ -76,11 +77,10 @@ for j in range(13):
         #the .5 is the square root , this is the distance formula
         distance =((BHx**2)+(BHy**2)+(BHz**2))**(.5)
         print "the distance is:", distance
-        
         # create an image using  the default bands (i, v, u)
         BHF.render(s,width= '5 kpc',plot=True,ret_im=True,filename='halo'+str(currenthalo)+'.png')
         plt.plot(BHx, BHy,'+')
-        #plt.savefig('h229.png')              
+        #plt.savefig('h229.png')
    
         
         starmass = h[currenthalo].s['mass'].sum()
@@ -94,6 +94,6 @@ for j in range(13):
         data= data[1:-1]
         f.write(data+'\n')
     
-    print data
+        print data
     
 f.close()

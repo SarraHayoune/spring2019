@@ -12,7 +12,8 @@ files = files[:,0]
 # function to find black hole
 def findBH(s):
     #BHfilter = pynbody.filt.LowPass('tform',0.0)
-    BHfilter = np.where(snap.stars['iord']==60352986 or snap.stars['iord']==60354630)
+    BHfilter = np.where(s.stars['iord']==60352986)
+    # or s.stars['iord']==60354630)
     BH = s.stars[BHfilter]
     return BH
 
@@ -93,6 +94,6 @@ for j in range(13):
         data= data[1:-1]
         f.write(data+'\n')
     
-    print data
+        print data
     
 f.close()

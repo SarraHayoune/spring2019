@@ -27,7 +27,6 @@ def findBHhalos(s):
 
 def getz(s):
     return s.properties['z']
-
 def gettime(s):
     return pynbody.analysis.cosmology.age(s)
 

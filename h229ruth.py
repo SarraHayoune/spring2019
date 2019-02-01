@@ -3,7 +3,7 @@ import pynbody
 import numpy as np
 import matplotlib.pylab as plt
 import readcol
-import BH_FUNCTIONS.py as BHF
+import BH_functions.py as BHF
 
 
 files = readcol.readcol('/Jillian/h229/files.list')

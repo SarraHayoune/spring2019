@@ -13,18 +13,18 @@ files = files[:,0]
 # function to find black hole
 def findBH(s):
     #BHfilter = pynbody.filt.LowPass('tform',0.0)
-<<<<<<< HEAD
+
    # BHfilter = np.where(s.stars['iord']==60352986)
     # or s.stars['iord']==60354630)
     BHfilter = np.where(s.stars['iord']==60352986) or (s.stars['iord']==60354630)
-=======
 
-    BHfilter = np.where(s.stars['iord']==60352986)
+
+    #BHfilter = np.where(s.stars['iord']==60352986)
     # or s.stars['iord']==60354630)
 
-    BHfilter = np.where(snap.stars['iord']==60352986) or (snap.stars['iord']==60354630)
+    #BHfilter = np.where(snap.stars['iord']==60352986) or (snap.stars['iord']==60354630)
 
->>>>>>> d7f4486011da8034728eca4d3c60321360655737
+
     BH = s.stars[BHfilter]
     return BH
 
@@ -73,24 +73,25 @@ for j in range(13):
         BHposition=BH['pos']
 
         #putting the x-values into a column
-        BHx= BHposition[[i],0]
-        print "x postion", BHx
+        BHx1= BHposition[[i],0]
+        BHx2= BHposition[[i],0]
+    #print "x postion", BHx
    
         #putting the y-values into a column
-        BHy= BHposition[[i],1]
-        print "y position", BHy
+        BHy1= BHposition[[i],1]
+        BHy2= BHposition[[i],1]
+    #print "y positon", BHy
 
          #putting the z-values into a column
-        BHz= BHposition[[i],2]
-        print "z position", BHz
-
+        BHz1= BHposition[[i],2]
+        BHz2= BHposition[[i],2]
         #the .5 is the square root , this is the distance formula
         distance =((BHx**2)+(BHy**2)+(BHz**2))**(.5)
         print "the distance is:", distance
         # create an image using  the default bands (i, v, u)
         BHF.render(s,width= '25 kpc',plot=True,ret_im=True,filename='halo'+str(currenthalo)+'.png')
-        plt.plot(BHx, BHy,'+')
-        plt.plot(BHx, BHy, '+')
+        plt.plot(BHx1, BHy1,'+')
+        plt.plot(BHx2, BHy2, '+')
         #plt.savefig('h229.png')
    
         

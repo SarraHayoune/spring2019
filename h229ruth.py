@@ -1,9 +1,9 @@
-# Assignement: Ruth simulation (h229)
+# Assignement: Ruth simulation (h229)[focusing on galaxy merger at z=3.76]
 import pynbody 
 import numpy as np
 import matplotlib.pylab as plt
 import readcol
-import BH_functions.py as BHF
+import BH_functions as BHF
 
 
 files = readcol.readcol('/Jillian/h229/files.list')

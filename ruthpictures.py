@@ -7,7 +7,7 @@ files = readcol.readcol('/Jillian/h229/files.list')
 files = files[:,0]
     
 f =  open("h229.dat", "w+") 
-for j in range(13)::
+for j in range(13):
     
     # loading the snapshotS
     s =pynbody.load('/Jillian/h229/'+file)

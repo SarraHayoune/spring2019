@@ -9,8 +9,9 @@ import BH_functions as BHF
 
 files = readcol.readcol('/Jillian/h229/files.list')
 files = files[:,0]
+# function to find black hole
     
-f =  open("h229.dat", "w+") 
+#f =  open("h229.dat", "w+") 
 for j in range(13):
     
     # loading the snapshotS

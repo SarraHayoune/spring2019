@@ -8,13 +8,13 @@ import readcol
 import BH_functions as BHF
 
 
-files = readcol.readcol('/data/scratch/jillian/h229/files.list')
+files = readcol.readcol('/data/scratch/jillian/h242/files.list')
 files = files[:,0]
 
 # function to find black hole
 def findBH(s):
     #BHfilter = pynbody.filt.LowPass('tform',0.0)
-    BHfilter = np.where((s.stars['iord']==60354630) | ( s.stars['iord']==60352986))
+    BHfilter = np.where((s.stars['iord']==75288918) | ( s.stars['iord']==75288831))
 
     BH = s.stars[BHfilter]
     return BH
@@ -33,14 +33,14 @@ def getz(s):
 def gettime(s):
     return pynbody.analysis.cosmology.age(s)
 
-f =  open("h229.dat", "w+") 
+f =  open("h242.dat", "w+") 
 
-for j in range(14,16):
+for j in range(14,15):
 
 
     
     # loading the snapshotS
-    s =pynbody.load('/data/scratch/jillian/h229/'+files[j])
+    s =pynbody.load('/data/scratch/jillian/h242/'+files[j])
  
     # convert the units 
     s.physical_units()

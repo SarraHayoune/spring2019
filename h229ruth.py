@@ -34,7 +34,7 @@ def gettime(s):
     return pynbody.analysis.cosmology.age(s)
 
 f =  open("h229.dat", "w+") 
-for j in range(13,15):
+for j in range(14,15):
     
     # loading the snapshotS
     s =pynbody.load('/data/scratch/jillian/h229/'+files[j])

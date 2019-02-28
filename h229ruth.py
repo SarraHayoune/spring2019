@@ -8,7 +8,7 @@ import readcol
 import BH_functions as BHF
 
 
-files = readcol.readcol('/data/scratch/jillian/h229/files.list')
+files = readcol.readcol('/mnt/jillian/h229/files.list')
 files = files[:,0]
 
 # function to find black hole
@@ -37,7 +37,7 @@ f =  open("h229.dat", "w+")
 for j in range(14,15):
     
     # loading the snapshotS
-    s =pynbody.load('/data/scratch/jillian/h229/'+files[j])
+    s =pynbody.load('/mnt/jillian/h229/'+files[j])
  
     # convert the units 
     s.physical_units()

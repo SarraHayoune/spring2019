@@ -8,7 +8,7 @@ import readcol
 import BH_functions as BHF
 
 
-files = readcol.readcol('/mnt/h229/files.list')
+files = readcol.readcol('/data/scratch/jillian/h229/files.list')
 files = files[:,0]
 
 # function to find black hole
@@ -35,12 +35,12 @@ def gettime(s):
 
 f =  open("h229.dat", "w+") 
 
-for j in range(14,16):
+for j in range (4,15):
 
 
     
     # loading the snapshotS
-    s =pynbody.load('/mnt/h229/'+files[j])
+    s =pynbody.load('/data/scratch/jillian/h229/'+files[j])
  
     # convert the units 
     s.physical_units()
@@ -91,44 +91,14 @@ for j in range(14,16):
                 ID= BH['iord'][i]
                 plt.plot(BHx1, BHy1,'+')
                 plt.plot(BHx2, BHy2,'+')
-                plt.savefig(filename='halo'+str(currenthalo)+',ID='+str(ID)+'.png')
+                plt.savefig(filename='ID='+str(ID)+',Z='+str(getz(s))+'.png')
 
                 distance1 =((BHx1**2)+(BHy1**2)+(BHz1**2))**(.5)
                 print "the distance is:", distance1
                 distance2 =((BHx2**2)+(BHy2**2)+(BHz2**2))**(.5)
                 print "the distance is:", distance2
 
-            elif BHhalos[0]== BHhalos[0]:
-              
-                 print "black holes are one black hole now"
-                 #put the galaxy you care about in the center of the simulation
-                 pynbody.analysis.angmom.faceon(h[currenthalo])
-
-                 BHposition=BH['pos']
-
-                 #putting the x-values into a column
-
-                 BHx1= BHposition[[0],0]
-                 #print "x postion", BHx
-            
-                 #putting the y-values into a column
-                 BHy1= BHposition[[0],1]
-                 #print "y position", BHy
-                 #putting the z-values into a column
-                 BHz1= BHposition[[0],2]
-                 #print "z position", BHz
-                 BHF.render(s,width= '5 kpc',plot= True, ret_im= True)
-                 ID= BH['iord'][i]
-                 plt.title(str(getz(s)))
-                 plt.plot(BHx1, BHy1,'+')
-                 #plt.plot(BHx2, BHy2,'+')
-                 plt.savefig(filename='halo'+str(currenthalo)+',ID='+str(ID)+'.png')
-
-                 distance =((BHx1**2)+(BHy1**2)+(BHz1**2))**(.5)
-                 print "the distance is:", distance
-                
-        else:
-            
+            else:
                 print "black holes are in different halos"
                 #put the galaxy you care about in the center of the simulation
                 pynbody.analysis.angmom.faceon(h[currenthalo])
@@ -155,12 +125,44 @@ for j in range(14,16):
                 plt.title(str(getz(s)))
                 plt.plot(BHx, BHy,'+')
                 plt.plot(BHx, BHy, '+')
-                plt.savefig(filename='halo'+str(currenthalo)+',ID='+str(ID)+'.png')
+                plt.savefig(filename='ID='+str(ID)+',Z='+str(getz(s))+'.png')
         
                 #the .5 is the square root , this is the distance formula
                 distance =((BHx**2)+(BHy**2)+(BHz**2))**(.5)
                 print "the distance is:", distance
-   
+
+
+                
+        else:
+              
+            print "black holes are one black hole now"
+            #put the galaxy you care about in the center of the simulation
+            pynbody.analysis.angmom.faceon(h[currenthalo])
+
+            BHposition=BH['pos']
+
+            #putting the x-values into a column
+
+            BHx1= BHposition[[0],0]
+            #print "x postion", BHx
+                 
+            #putting the y-values into a column
+            BHy1= BHposition[[0],1]
+            #print "y position", BHy
+            #putting the z-values into a column
+            BHz1= BHposition[[0],2]
+            #print "z position", BHz
+            BHF.render(s,width= '5 kpc',plot= True, ret_im= True)
+            ID= BH['iord'][i]
+            plt.title(str(getz(s)))
+            plt.plot(BHx1, BHy1,'+')
+            #plt.plot(BHx2, BHy2,'+')
+            plt.savefig(filename='ID='+str(ID)+',Z='+str(getz(s))+'.png')
+
+            distance =((BHx1**2)+(BHy1**2)+(BHz1**2))**(.5)
+            print "the distance is:", distance
+            
+                   
         
         starmass = h[currenthalo].s['mass'].sum()
         gasmass = h[currenthalo].g['mass'].sum()

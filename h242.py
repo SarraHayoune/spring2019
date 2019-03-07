@@ -99,42 +99,9 @@ for j in range(7,12):
                 print "the distance is:", distance1
                 distance2 =((BHx2**2)+(BHy2**2)+(BHz2**2))**(.5)
                 print "the distance is:", distance2
-
-<<<<<<< HEAD
-            elif  BHhalos[0]  ==  BHhalos[0]:
-              
-                 print "black holes are one black hole now"
-                 #put the galaxy you care about in the center of the simulation
-                 pynbody.analysis.angmom.faceon(h[currenthalo])
-
-                 BHposition=BH['pos']
-
-                 #putting the x-values into a column
-
-                 BHx1= BHposition[[0],0]
-                 #print "x postion", BHx
+        
             
-                 #putting the y-values into a column
-                 BHy1= BHposition[[0],1]
-                 #print "y position", BHy
-                 #putting the z-values into a column
-                 BHz1= BHposition[[0],2]
-                 #print "z position", BHz
-                 BHF.render(s,width= '5 kpc',plot= True, ret_im= True)
-                 ID= BH['iord'][i]
-                 plt.title(str(getz(s)))
-                 plt.plot(BHx1, BHy1,'+')
-                 #plt.plot(BHx2, BHy2,'+')
-                 plt.savefig(filename='ID='+str(ID)+',z='+str(getz(s))+'.png')
-
-                 distance =((BHx1**2)+(BHy1**2)+(BHz1**2))**(.5)
-                 print "the distance is:", distance
-                
-        else:
-=======
->>>>>>> 9f41ec7da1423a458b35cdae4df637c000651b7b
-            
-             else:
+            else:
                 print "black holes are in different halos"
                 #put the galaxy you care about in the center of the simulation
                 pynbody.analysis.angmom.sideon(h[currenthalo])

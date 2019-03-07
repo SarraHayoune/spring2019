@@ -100,7 +100,7 @@ for j in range(7,12):
                 distance2 =((BHx2**2)+(BHy2**2)+(BHz2**2))**(.5)
                 print "the distance is:", distance2
 
-            else:
+            elif  BHhalos[0]  ==  BHhalos[0]:
               
                  print "black holes are one black hole now"
                  #put the galaxy you care about in the center of the simulation

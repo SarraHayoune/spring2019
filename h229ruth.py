@@ -88,10 +88,10 @@ for j in range (4,15):
                 BHz2= BHposition[[1],2]
                 #print "z position", BHz
                 BHF.render(s,width= '5 kpc',plot= True, ret_im= True)
-                ID= BH['iord'][i]
-                plt.plot(BHx1, BHy1,'+')
-                plt.plot(BHx2, BHy2,'+')
-                plt.savefig(filename='ID='+str(ID)+',Z='+str(getz(s))+'.png')
+                IDbh = BH['iord'][i]
+                plt.plot(BHx1, BHz1,'+')
+                plt.plot(BHx2, BHz2,'+')
+                plt.savefig(filename='IDbh='+str(IDbh)+',z='+str(getz(s))+'.png')
 
                 distance1 =((BHx1**2)+(BHy1**2)+(BHz1**2))**(.5)
                 print "the distance is:", distance1
@@ -120,12 +120,12 @@ for j in range (4,15):
                 #BHz2= BHposition[[i],2]
                 print "z  positon", BHz
                 # create an image using  the default bands (i, v, u)
-                ID= BH['iord'][i]
+                IDbh= BH['iord'][i]
                 BHF.render(s,width= '5 kpc',plot=True,ret_im=True)
                 plt.title(str(getz(s)))
-                plt.plot(BHx, BHy,'+')
-                plt.plot(BHx, BHy, '+')
-                plt.savefig(filename='ID='+str(ID)+',Z='+str(getz(s))+'.png')
+                plt.plot(BHx, BHz,'+')
+                plt.plot(BHx, BHz, '+')
+                plt.savefig(filename='IDbh='+str(IDbh)+',z='+str(getz(s))+'.png')
         
                 #the .5 is the square root , this is the distance formula
                 distance =((BHx**2)+(BHy**2)+(BHz**2))**(.5)
@@ -153,11 +153,11 @@ for j in range (4,15):
             BHz1= BHposition[[0],2]
             #print "z position", BHz
             BHF.render(s,width= '5 kpc',plot= True, ret_im= True)
-            ID= BH['iord'][i]
+            IDbh= BH['iord'][i]
             plt.title(str(getz(s)))
-            plt.plot(BHx1, BHy1,'+')
+            plt.plot(BHx1, BHz1,'+')
             #plt.plot(BHx2, BHy2,'+')
-            plt.savefig(filename='ID='+str(ID)+',Z='+str(getz(s))+'.png')
+            plt.savefig(filename='IDbh='+str(IDbh)+',z='+str(getz(s))+'.png')
 
             distance =((BHx1**2)+(BHy1**2)+(BHz1**2))**(.5)
             print "the distance is:", distance

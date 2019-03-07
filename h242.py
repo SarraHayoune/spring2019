@@ -1,4 +1,4 @@
-# Assignement: Ruth simulation (h229)[focusing on galaxy merger at z=3.76]
+# Assignement: h242 simulation)[focusing on galaxy merger at z=4]
 import pynbody 
 import numpy as np
 from numpy import _NoValue
@@ -14,7 +14,9 @@ files = files[:,0]
 # function to find black hole
 def findBH(s):
     #BHfilter = pynbody.filt.LowPass('tform',0.0)
+    #BHfilter = np.where((s.stars['iord']==101863565) | ( s.stars['iord']==101863705))
     BHfilter = np.where((s.stars['iord']==75288918) | ( s.stars['iord']==75288831))
+    
 
     BH = s.stars[BHfilter]
     return BH
@@ -33,14 +35,14 @@ def getz(s):
 def gettime(s):
     return pynbody.analysis.cosmology.age(s)
 
-f =  open("h242.dat", "w+") 
+f =  open("h242.dat","w+") 
 
 for j in range(14,15):
 
 
     
     # loading the snapshotS
-    s =pynbody.load('/data/scratch/jillian/h242/'+files[j])
+    s =pynbody.load('/data/scratch/jillian/h148/'+files[j])
  
     # convert the units 
     s.physical_units()

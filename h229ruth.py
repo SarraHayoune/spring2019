@@ -69,7 +69,7 @@ for j in range (4,15):
             if  BHhalos[0]  ==  BHhalos[1]:
                 print "black holes are in the same halo"
                 #put the galaxy you care about in the center of the simulation
-                pynbody.analysis.angmom.faceon(h[currenthalo])
+                pynbody.analysis.angmom.sideon(h[currenthalo])
 
                 BHposition=BH['pos']
 
@@ -89,8 +89,8 @@ for j in range (4,15):
                 #print "z position", BHz
                 BHF.render(s,width= '5 kpc',plot= True, ret_im= True)
                 IDbh = BH['iord'][i]
-                plt.plot(BHx1, BHz1,'+')
-                plt.plot(BHx2, BHz2,'+')
+                plt.plot(BHx1, BHy1,'+')
+                plt.plot(BHx2, BHy2,'+')
                 plt.savefig(filename='IDbh='+str(IDbh)+',z='+str(getz(s))+'.png')
 
                 distance1 =((BHx1**2)+(BHy1**2)+(BHz1**2))**(.5)
@@ -101,7 +101,7 @@ for j in range (4,15):
             else:
                 print "black holes are in different halos"
                 #put the galaxy you care about in the center of the simulation
-                pynbody.analysis.angmom.faceon(h[currenthalo])
+                pynbody.analysis.angmom.sideon(h[currenthalo])
                 #this is the position of black hole
                 BHposition=BH['pos']
 
@@ -123,8 +123,8 @@ for j in range (4,15):
                 IDbh= BH['iord'][i]
                 BHF.render(s,width= '5 kpc',plot=True,ret_im=True)
                 plt.title(str(getz(s)))
-                plt.plot(BHx, BHz,'+')
-                plt.plot(BHx, BHz, '+')
+                plt.plot(BHx, BHy,'+')
+                plt.plot(BHx, BHy, '+')
                 plt.savefig(filename='IDbh='+str(IDbh)+',z='+str(getz(s))+'.png')
         
                 #the .5 is the square root , this is the distance formula
@@ -137,7 +137,7 @@ for j in range (4,15):
               
             print "black holes are one black hole now"
             #put the galaxy you care about in the center of the simulation
-            pynbody.analysis.angmom.faceon(h[currenthalo])
+            pynbody.analysis.angmom.sideon(h[currenthalo])
 
             BHposition=BH['pos']
 
@@ -155,7 +155,7 @@ for j in range (4,15):
             BHF.render(s,width= '5 kpc',plot= True, ret_im= True)
             IDbh= BH['iord'][i]
             plt.title(str(getz(s)))
-            plt.plot(BHx1, BHz1,'+')
+            plt.plot(BHx1, BHy1,'+')
             #plt.plot(BHx2, BHy2,'+')
             plt.savefig(filename='IDbh='+str(IDbh)+',z='+str(getz(s))+'.png')
 

@@ -1,4 +1,5 @@
 # Assignement: Ruth simulation (h229)[focusing on galaxy merger at z=3.76]
+
 import pynbody 
 import numpy as np
 import pandas as pd
@@ -9,7 +10,6 @@ import BH_functions as BHF
 
 files = readcol.readcol('/Jillian/h229/files.list')
 files = files[:,0]
-# function to find black hole
     
 #f =  open("h229.dat", "w+") 
 for j in range(13):
@@ -52,22 +52,21 @@ for j in range(13):
     #this is the position of black hole
     BHposition=BH['pos']
 
-        #putting the x-values into a column
+    #putting the x-values into a column
     BHx1= BHposition[[1],0]
     BHx2= BHposition[[2],0]
     #print "x postion", BHx
    
-        #putting the y-values into a column
+    #putting the y-values into a column
     BHy1= BHposition[[1],1]
     BHy2= BHposition[[2],1]
     #print "y positon", BHy
 
-         #putting the z-values into a column
+    #putting the z-values into a column
     BHz1= BHposition[[1],2]
     BHz2= BHposition[[2],2]
     #print "z position", BHz
-   
-    #plt.plot(BHx, BHy,'+') 
+    
     # create an image using  the default bands (i, v, u)
     #pynbody.plot.stars.render(s,width= '5 kpc',plot=True,ret_im=True,filename='halo'+str(h2)+'.png')
     BHF.render(s,width= '25 kpc', plot= True, ret_im= True, filename='ruthpictures.png')

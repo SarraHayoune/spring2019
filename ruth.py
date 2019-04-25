@@ -23,36 +23,33 @@ x  = files3[:,2]
 y  = files3[:,3]
 z  = files3[:,4]
 
-# interpolate for BH1 '60352986'
-result11= interpolate.interp1d(x, time3)
-x1_position= result11(time1)
-
-result12= interpolate.interp1d(y, time3)
-y1_position= result12(time1)
-
-result13= interpolate.interp1d(z, time3)
-z1_position= result13(time1)
-
-#interpolate for BH2 '60354630'
-result21= interpolate.interp1d(x, time3)
+# interpolate for BH1 '60352986' and BH2 '60354630'
+result1= interpolate.interp1d(x, time3)
 x1_position= result1(time1)
+x2_position= result1(time2)
 
-result22= interpolate.interp1d(y, time3)
+result2= interpolate.interp1d(y, time3)
 y1_position= result2(time1)
-
-result23= interpolate.interp1d(z, time3)
-z1_position= result3(time1)
+y2_position= result2(time2)
 
 
+result3= interpolate.interp1d(z, time3)
+z1_position= result3(time2)
+z2_position= result3(time2)
 
-new_x_position = np.subtract(x1, x_position)
-new_y_position = np.subtract(y1, y_position)
+
+new_x1_position = np.subtract(x1, x1_position)
+new_y1_position = np.subtract(y1, y1_position)
+
+new_x2_position = np.subtract(x2, x2_position)
+new_y2_position = np.subtract(y2, y2_position)
 
 
-#plt.plot(time1, redshift1)
-plt.savefig(filename= 'redshift1'+'.png')
-plt.plot(time2, redshift2)
-plt.savefig(filename= 'redshift2'+'.png')
+# plot the resulting BH1 x vs y   and BH2  x vs y  with their new positions
+plt.plot(new_x1_position, new_y1_position )
+plt.plot(new_x2_position, new_y2_position )
+
+plt.savefig(filename= 'new_position'+'.png')
 
 plt.show()
 

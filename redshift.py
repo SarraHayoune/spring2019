@@ -1,4 +1,6 @@
-import scipy
+
+# this is to interpolate redshift and graph it
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -8,6 +10,12 @@ from scipy import  interpolate
 
 
 files1 = readcol.readcol('60352986.fits.txt' )
+print len(files1)
+
+item=0.767008023
+index= np.where(files1==item)
+print index
+
 files2= readcol.readcol('times.list')
 
 
@@ -27,9 +35,5 @@ plt.plot(time2, redshift2)
 plt.savefig(filename= 'redshift2'+'.png')
 
 plt.show()
-
-
-
-
 
 

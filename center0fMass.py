@@ -50,27 +50,12 @@ for i in range (6,60):
     #which halo are we on?
     currenthalo = BHhalos[0]
     print 'current halo: ', currenthalo
-     #this is the position of black hole
-    BHposition=BH['pos']
-
-    #putting the x-values into a column
-    BHx= BHposition[[i],0]
-    print "x postion", BHx
    
-    #putting the y-values into a column
-    BHy= BHposition[[i],1]
-    print "y position", BHy
 
-    #putting the z-values into a column
-    BHz= BHposition[[i],2]
-    print "z position", BHz 
-    
-   
-    
-   # p=pynbody.analysis.halo.center_of_mass(h[currenthalo])
-   # print p
+   p=pynbody.analysis.halo.center_of_mass(h[currenthalo])
+   print p
 
-   # data = [currenthalo, gettime(s),p ]
+   data = [currenthalo, gettime(s),p ]
    
         
         

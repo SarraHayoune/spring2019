@@ -1,4 +1,5 @@
 #this is to interpolate the data of the galaxy center of mass compared to both black holes positions and graph the result at the end
+#ruth simulation
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt

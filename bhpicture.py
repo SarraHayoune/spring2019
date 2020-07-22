@@ -49,7 +49,7 @@ for i in halolist:
 
  # center on the largest halo and aligh the disk
       
-    pynbody.analysis.halo.center(h[currenthalo], mode= 'hyb');
+    pynbody.analysis.halo.center(h[currenthalo], mode= 'hyb')
         
        
 
@@ -70,7 +70,7 @@ for i in halolist:
     
     # create an image using  the default bands (i, v, u)
     #plt.plot(BHx, BHy,'+') 
-    BHF.render(s,width= '5 kpc',plot=True,ret_im=True,filename='halo'+str(currenthalo)+'.png')
+    BHF.render(s,width= '15 kpc',plot=True,ret_im=True,filename='halo'+str(currenthalo)+'.png')
     plt.plot(BHx, BHy,'+')
                         
     #plot_BH_pos(h[currenthalo].s, BH,'tform', w=20, save=True)
